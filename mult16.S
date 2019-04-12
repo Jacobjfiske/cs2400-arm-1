@@ -13,7 +13,7 @@
 		
 		ldr		r1, [r0]	  ;first num -> r1
 		ldr		r2, [r0,#4] 	  ;second num -> r2
-		mov		r5, #16     	  ;loop ctr for 32 bits
+		mov		r5, #16     	  ;loop ctr for 16 bits
 		mov		r3, #1	  	  ;setting mask to 1
 		mov		r6, #0	          ;accumulator
 loop						  ; -- loop for each bit
@@ -23,7 +23,7 @@ loop						  ; -- loop for each bit
 		lsr		r2,r2,#1	  ;shift number being checked right for the next digit
 		lsl		r1,r1,#1	  ;shift number put into acc left
 		subs		r5,r5,#1	  ;decrement loop ctr
-		bne		loop		  ;branc to loop
+		bne		loop		  ;branch to loop
 		str		r6, [r7]	  ;store outcome from acc -> result in mem
 		end
 		
